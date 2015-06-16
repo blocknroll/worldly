@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'maps/index'
+  root 'maps#index'
 
-  root 'application#hello'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
