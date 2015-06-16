@@ -1,0 +1,9 @@
+
+///////////////////////////////////////////////////////////////////////
+1st check-in:  Tue 150616
+
+  - Bring your persona and wireframes
+  - Have your app deployed to Heroku
+  - Have your CSS and HTML on production
+  - Have implemented a third party login if applicable
+  - Have explored the API to make sure that your project is feasible
