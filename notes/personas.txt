@@ -1,0 +1,38 @@
+///////////////////////////////////////////////////////////////////////
+PERSONAS:
+
+  GENERAL:
+    wants to stay connected to friends in the Turing Community
+    wants to know where new friends are from
+    loves to travel
+    wants local recommendations from friends
+
+
+
+
+  Fred:
+    eats well
+    exercises regularly
+    loves outdoor sports
+    healthy
+    environmentally & socially conscious
+
+  44 M
+    single
+    urban
+    techie
+    college-grad
+    healthy eater
+    apartment
+
+  30 F
+    married
+    urban
+    healthy
+    has new home
+
+  18 M
+    single
+    urban
+    techie
+    comin' up...
