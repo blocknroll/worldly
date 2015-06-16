@@ -14,6 +14,14 @@ group :development, :test do
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'
   gem 'spring',      '1.1.3'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'pry'
+  gem 'vcr'
+  gem 'launchy'
+  gem 'capybara'
+  gem "better_errors"
+  gem 'binding_of_caller'
+  gem 'simplecov', :require => false, :group => :test
 end
 
 group :production do
