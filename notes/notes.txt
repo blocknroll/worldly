@@ -9,12 +9,45 @@
   - Have explored the API to make sure that your project is feasible
 
 
+    Jorge feedback:
+        Required
+          Display map via Mapbox
+          User can upload profile with locations they've been to
+          Display user's locations on the map
+
+        Optional
+          Filtering based on city, state and country
+          Who’s been in most places
 
 
 
 
 
+
+
+///////////////////////////////////////////////////////////////////////
+Wed 150617
 
 heroku:
   under settings...
   add MAPBOX_TOKEN to Config Variables
+
+
+schema:
+    User
+      has many places
+
+    UsersPlaces
+
+    Places
+      has many users
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////
