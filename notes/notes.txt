@@ -7,3 +7,14 @@
   - Have your CSS and HTML on production
   - Have implemented a third party login if applicable
   - Have explored the API to make sure that your project is feasible
+
+
+
+
+
+
+
+
+heroku:
+  under settings...
+  add MAPBOX_TOKEN to Config Variables
