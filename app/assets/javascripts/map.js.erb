@@ -1,0 +1,30 @@
+$(document).ready(function() {
+
+  //Set mapbox map view
+  L.mapbox.accessToken = "<%= ENV["MAPBOX_TOKEN"] %>"
+
+  var map = L.mapbox.map('map', 'fredblock.mfga25ge');
+  var markerLayer = L.mapbox.featureLayer().addTo(map);
+  var home  = [39.750081, -104.999703];
+
+  var geojson = {
+    type: "Feature",
+    geometry: {
+      type: "Point",
+      coordinates: [-88.4788429, 44.164506]
+    },
+    properties: {
+      // profile-pic:
+      // username:
+      place: "Denver, Colorado",
+      "marker-color": "#1087bf",
+      "marker-size": "small",
+      "marker-symbol": "circle"
+    }
+  };
+
+
+  map.setView(home, 2);
+  markerLayer.setGeoJSON(geojson);
+
+});
