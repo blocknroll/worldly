@@ -44,6 +44,26 @@ schema:
 
 
 
+$ rails g controller Users new
+
+$ rails g model User name:string email:string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
