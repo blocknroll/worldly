@@ -3,6 +3,5 @@ class MapsController < ApplicationController
   end
 
   def login
-    # binding.pry
   end
 end
