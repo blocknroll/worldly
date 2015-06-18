@@ -44,13 +44,10 @@ schema:
 
 
 
-$ rails g controller Users new
 
-$ rails g model User name:string email:string
+$ rails g migration CreateUsers nickname email provider token uid image_url
 
-
-
-
+$ rails g controller Dashboard
 
 
 

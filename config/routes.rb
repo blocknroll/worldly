@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  get    '/auth/:provider/callback', to: 'sessions#create'
+  delete '/logout',                  to: 'sessions#destroy'
 
-  get 'users/new'
+  root   "maps#login"
 
-  root 'maps#index'
+  get    '/dashboard',               to: 'dashboard#show'
+
+  # get    'users/new'
+
 
 
 
