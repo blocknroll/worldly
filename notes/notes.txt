@@ -68,3 +68,32 @@ $ rails g controller Dashboard
 
 
 ///////////////////////////////////////////////////////////////////////
+150621 Sun
+Consume Eventful API
+
+
+
+build:  app/services/eventful_service.rb
+
+in rails c:
+  service = EventfulService.new.events
+
+  service = EventfulService.new.events.body
+
+  JSON.parse(EventfulService.new.events)
+    parses the JSON into a hash, so we can access the keys and values programmatically
+
+
+  events[:events][:event].first
+
+
+
+rails g controller events
+
+
+
+
+
+OPENSTRUCT:
+  a class that gets built on the fly...
+  allows us to get access to all the attributes without having to explicitly create them
