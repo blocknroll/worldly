@@ -97,3 +97,24 @@ rails g controller events
 OPENSTRUCT:
   a class that gets built on the fly...
   allows us to get access to all the attributes without having to explicitly create them
+
+
+
+
+
+/////////////////////////////
+TODO:
+
+- remove Turing logo and github login from header
+- name & domain
+    mappo.events
+    megahot.click
+    mappy.click
+- add logo
+
+
+- find me button
+- pass lat/long to API call
+
+- update map
+  - carto.css

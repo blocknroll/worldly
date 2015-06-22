@@ -14,4 +14,27 @@ $(document).ready(function() {
 
   markerLayer.setGeoJSON(geojsonData);
 
+
+
+  // markerLayer.on('mouseover', function(e) {
+  //   var marker  = e.layer;
+  //   var popupContent = '<a target="_blank" class="popup" href="#"> </a>' +
+  //                     //  '<p> <img class="popup-pic" src="' + marker.feature.properties.thumbnail + '"/> <br>' +
+  //                                       marker.feature.properties.title + "<br>Title: " +
+  //                                       marker.feature.properties.venue_name + "<br>Venue: "
+  //                               '</p>'
+  //   // http://leafletjs.com/reference.html#popup
+  //   marker.bindPopup(popupContent,{
+  //       closeButton: false,
+  //       maxWidth: 220
+  //   });
+  //
+  //   marker.openPopup();
+  //
+  // });
+  //
+  // markerLayer.on('mouseout', function(e) {
+  //   e.layer.closePopup();
+  // });
+
 });

@@ -6,7 +6,7 @@ class Event < OpenStruct
   end
 
   def self.all
-    service.events.map do |data|  # go to EventfulService > events, return the hash, and map the Events data a new array
+    service.events.map do |data|  # go to EventfulService > events, return the parsed hash, and map the Events data a new array
       Event.new(data)             # create new objects for each Event
     end
   end
@@ -17,7 +17,7 @@ class Event < OpenStruct
 
 
   def self.get_json_map_data
-    service.events.map do |event|  # go to EventfulService > events, return the hash, and map the Events data a new array
+    service.events.map do |event|  # go to EventfulService > events, return the parsed hash, and map the Events data a new array
       geo_data(event)              # create new 'geo_data' objects for each Event (in private method below)
     end
   end
@@ -33,7 +33,11 @@ class Event < OpenStruct
                   coordinates: [ event[:longitude], event[:latitude] ]
                 },
                 properties: {
-                  title: event[:title]
+                  title:      event[:title],
+                  venue_name: event[:venue_name],
+                  :'marker-color' => '#63b6e5',
+                  # :'marker-symbol' => 'post',
+                  :'marker-size' => 'small'
                 }
             }
           end
