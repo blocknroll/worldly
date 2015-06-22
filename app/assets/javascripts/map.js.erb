@@ -3,28 +3,52 @@ $(document).ready(function() {
   //Set mapbox map view
   L.mapbox.accessToken = "<%= ENV["MAPBOX_TOKEN"] %>"
 
+
+  var geojsonData = $('#map-data').data('geojson')
+
   var map = L.mapbox.map('map', 'fredblock.mfga25ge');
-  var markerLayer = L.mapbox.featureLayer().addTo(map);
   var home  = [39.750081, -104.999703];
+  map.setView(home, 13);
 
-  var geojson = {
-    type: "Feature",
-    geometry: {
-      type: "Point",
-      coordinates: [-88.4788429, 44.164506]
-    },
-    properties: {
-      // profile-pic:
-      // username:
-      place: "Denver, Colorado",
-      "marker-color": "#1087bf",
-      "marker-size": "small",
-      "marker-symbol": "circle"
-    }
-  };
+  L.control.locate({
+      drawCircle: true,
+      follow: true,
+      setView: true,
+      locateOptions:{maxZoom:14}
+  }).addTo(map);
 
 
-  map.setView(home, 2);
-  markerLayer.setGeoJSON(geojson);
+  var markerLayer = L.mapbox.featureLayer().addTo(map);
+
+  markerLayer.setGeoJSON(geojsonData);
+
+
+
+  map.on('locationfound', function(e) {
+    map.setView(e.latlng, 16);
+  });
+
+
+
+  // markerLayer.on('mouseover', function(e) {
+  //   var marker  = e.layer;
+  //   var popupContent = '<a target="_blank" class="popup" href="#"> </a>' +
+  //                     //  '<p> <img class="popup-pic" src="' + marker.feature.properties.thumbnail + '"/> <br>' +
+  //                                       marker.feature.properties.title + "<br>Title: " +
+  //                                       marker.feature.properties.venue_name + "<br>Venue: "
+  //                               '</p>'
+  //   // http://leafletjs.com/reference.html#popup
+  //   marker.bindPopup(popupContent,{
+  //       closeButton: false,
+  //       maxWidth: 220
+  //   });
+  //
+  //   marker.openPopup();
+  //
+  // });
+  //
+  // markerLayer.on('mouseout', function(e) {
+  //   e.layer.closePopup();
+  // });
 
 });
