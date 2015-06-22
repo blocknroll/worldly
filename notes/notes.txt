@@ -111,10 +111,12 @@ TODO:
     megahot.click
     mappy.click
 - add logo
+- update map
 
 
-- find me button
+- add 'find me' button
 - pass lat/long to API call
 
-- update map
-  - carto.css
+- tests
+
+- carto.css

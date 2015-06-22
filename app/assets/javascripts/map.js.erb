@@ -10,9 +10,23 @@ $(document).ready(function() {
   var home  = [39.750081, -104.999703];
   map.setView(home, 13);
 
+  L.control.locate({
+      drawCircle: true,
+      follow: true,
+      setView: true,
+      locateOptions:{maxZoom:14}
+  }).addTo(map);
+
+
   var markerLayer = L.mapbox.featureLayer().addTo(map);
 
   markerLayer.setGeoJSON(geojsonData);
+
+
+
+  map.on('locationfound', function(e) {
+    map.setView(e.latlng, 16);
+  });
 
 
 
