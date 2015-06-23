@@ -35,6 +35,7 @@ class Event < OpenStruct
                 properties: {
                   title:      event[:title],
                   venue_name: event[:venue_name],
+                  url:        event[:url],
                   :'marker-color' => '#F38E19',
                   :'marker-size' => 'small'
                 }

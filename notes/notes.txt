@@ -103,7 +103,7 @@ OPENSTRUCT:
 
 
 /////////////////////////////
-TODO:
+DONE:
 
 - remove Turing logo and github login from header
 - name & domain
@@ -112,10 +112,14 @@ TODO:
     mappy.click
 - add logo
 - update map
-
-
 - add 'find me' button
+- build-out simple list view
+
+
+TO-DO:
 - pass lat/long to API call
+- figure out AJAX
+
 
 - tests
 
