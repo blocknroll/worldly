@@ -120,3 +120,9 @@ TODO:
 - tests
 
 - carto.css
+
+
+
+
+1.  build-out list view
+2.  figure out AJAX
