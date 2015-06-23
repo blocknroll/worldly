@@ -1,9 +1,20 @@
 class MapsController < ApplicationController
+
   def index
-    @geo_json = Event.get_json_map_data
-    # binding.pry
+    @mapdata = if params[:lat] && params[:lon]
+      Event.get_json_map_data(location: { lat: params[:lat].to_s, lon: params[:lon].to_s })
+    else
+      Event.get_json_map_data
+    end
+
+    # respond_to do |format|
+    #   format.html {}
+    #   format.json { render json: @mapdata }
+    # end
   end
+
 
   def login
   end
+
 end
