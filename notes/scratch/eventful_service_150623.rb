@@ -5,7 +5,6 @@ class EventfulService
   attr_reader :client
 
   def initialize
-    # http://api.eventful.com/json/events/search?app_key=key&where=39.750081,-104.999703&within=5
     @client = Hurley::Client.new('http://api.eventful.com/json')
   end
 
@@ -21,7 +20,7 @@ class EventfulService
     events[:events][:event]
   end
 
-  def get_json_map_data(location: { lat: "39.750081", lon: "-104.999703" } )
+  def get_json_map_data(location: { lat: "44.1742", lon: "-88.4686" } )
     geo_data = get_events(location).map do |event|  # go to EventfulService > events, return the parsed hash, and map the Events data a new array
       geo_data(event)                               # create new 'geo_data' objects for each Event (in private method below)
     end
