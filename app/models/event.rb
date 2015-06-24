@@ -25,7 +25,7 @@ class Event < OpenStruct
 
       private
 
-          def self.geo_data(event)
+          def self.geo_data(event)  # creates GeoJSON data with each event
             {
                 type: 'Feature',
                 geometry: {
