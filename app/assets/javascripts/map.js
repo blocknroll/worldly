@@ -33,9 +33,9 @@ $(document).ready(function() {
       popUpAll(marker);
     });
 
-    markerLayer.on('mouseout', function(e) {
-      e.layer.closePopup();
-    });
+    // markerLayer.on('mouseout', function(e) {
+    //   e.layer.closePopup();
+    // });
 
     // addRows(data)
     // mapHighlight(data)
@@ -47,9 +47,17 @@ $(document).ready(function() {
 
 
   function popUpAll(marker){
-    var popupContent = '<a target="_blank" class="popup" href="#"> </a>'
-                       + '<p> <img class="popup-pic" src=" </p>'
-                      //  + marker.feature.properties.thumbnail + '"/> </p>'
+    // debugger
+    var popupContent = "<b>"          + marker.feature.properties.title +
+                       "</b><br>"     + marker.feature.properties.venue_name +
+                       "<br><a href=" + marker.feature.properties.url +
+                       " class='btn btn-default' target='_blank'>details</a>"
+
+
+
+    // var popupContent = '<a target="_blank" class="popup" href="#"> </a>'
+    //                    + '<p> <img class="popup-pic" src="'
+    //                    + marker.feature.properties.url + '"/> </p>'
 
     // http://leafletjs.com/reference.html#popup
     marker.bindPopup(popupContent,{
@@ -96,7 +104,7 @@ map.on('locationerror', function() {
 function onMapClick(e){
       popup
           .setLatLng(e.latlng)
-          .setContent("<p class='instagram-likes'>Focusing your kaleidoscope</p>")
+          .setContent("<p>...finding events around you...</p>")
           .openOn(map);
           markerLayer.clearLayers()
           createPoints(e.latlng);
