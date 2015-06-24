@@ -3,10 +3,6 @@ $(document).ready(function() {
   //Set mapbox map view
   L.mapbox.accessToken = "<%= ENV["MAPBOX_TOKEN"] %>"
 
-  var geolocate = document.getElementById('geolocate');
-
-  var geojsonData = $('#map-data').data('geojson')
-
   var map = L.mapbox.map('map', 'fredblock.mfga25ge');
   var home  = [39.750081, -104.999703];
   map.setView(home, 13);
@@ -18,6 +14,9 @@ $(document).ready(function() {
       locateOptions:{maxZoom:14}
   }).addTo(map);
 
+  var geolocate = document.getElementById('geolocate');
+
+  var geojsonData = $('#map-data').data('geojson')
 
   var markerLayer = L.mapbox.featureLayer().addTo(map);
 
@@ -47,18 +46,30 @@ if (!navigator.geolocation) {
 map.on('locationfound', function(e) {
     map.fitBounds(e.bounds);
 
-    markerLayer.setGeoJSON({
-        type: 'Feature',
-        geometry: {
-            type: 'Point',
-            coordinates: [e.latlng.lng, e.latlng.lat]
-        },
-        properties: {
-            'title': 'Here I am!',
-            'marker-color': '#ff8888',
-            'marker-symbol': 'star'
-        }
+    var url = '/maps.json'
+    if (coordinates !== undefined) {
+      url += '?lat=' + coordinates['lat'] + '&lon=' + coordinates['lng'];
+    }
+    $.get(url, function(data) {
+      markerLayer.setGeoJSON(data);
     });
+
+
+
+
+    // Original 'find me'
+    // markerLayer.setGeoJSON({
+    //     type: 'Feature',
+    //     geometry: {
+    //         type: 'Point',
+    //         coordinates: [e.latlng.lng, e.latlng.lat]
+    //     },
+    //     properties: {
+    //         'title': 'Here I am!',
+    //         'marker-color': '#ff8888',
+    //         'marker-symbol': 'star'
+    //     }
+    // });
 
     // And hide the geolocation button
     geolocate.parentNode.removeChild(geolocate);
