@@ -14,7 +14,7 @@ class EventfulService
       request.query["app_key"] = ENV["eventful_key"]
       request.query["where"]   = "#{location[:lat]},#{location[:lon]}"
       # request.query["where"]   = "39.750081,-104.999703"
-      request.query["within"]  = "100"
+      request.query["within"]  = "3"
       request.options.timeout  = 1
     end
     events = parse(response.body)

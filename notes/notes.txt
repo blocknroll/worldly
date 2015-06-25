@@ -106,6 +106,29 @@ OPENSTRUCT:
 
 
 
+
+events = EventfulService.new.get_events(39.750081,-104.999703")
+events = EventfulService.new.get_events(lat=39.7339901219319&lon=-104.98003005981445)
+
+lat=39.7339901219319&lon=-104.98003005981445
+
+
+events = EventfulService.new
+location = { lat: "44.1742", lon: "-88.4686" }
+response = events.get_events(location)
+response.first
+
+
+
+
+open SimpleCov:
+  $ open coverage/index.html
+
+
+
+
+
+
 /////////////////////////////
 DONE:
 
@@ -118,26 +141,12 @@ DONE:
 - update map
 - add 'find me' button
 - build-out simple list view
-
-
-TO-DO:
 - pass lat/long to API call
 - figure out AJAX
 
 
-- tests
+TO-DO:
+- TESTS TESTS TESTS
+- errors
 
 - carto.css
-
-
-
-events = EventfulService.new.get_events(39.750081,-104.999703")
-events = EventfulService.new.get_events(lat=39.7339901219319&lon=-104.98003005981445)
-
-lat=39.7339901219319&lon=-104.98003005981445
-
-
-events = EventfulService.new
-location = { lat: "44.1742", lon: "-88.4686" }
-response = events.get_events(location)
-response.first
