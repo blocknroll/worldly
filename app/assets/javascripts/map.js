@@ -9,11 +9,11 @@ $(document).ready(function() {
   var popup       = L.popup();
   map.setView(home, 13);
 
-  L.control.locate({
-      drawCircle: true,
-      setView: true,
-      locateOptions:{maxZoom:14}
-  }).addTo(map);
+  // L.control.locate({
+  //     drawCircle: true,
+  //     setView: true,
+  //     locateOptions:{maxZoom:14}
+  // }).addTo(map);
 
 
   // var geojsonData = $('#map-data').data('geojson')
